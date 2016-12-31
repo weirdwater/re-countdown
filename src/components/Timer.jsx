@@ -34,15 +34,7 @@ class Timer extends React.Component {
         }
 
         this.state = {
-            timeLeft: {
-                y: 0,
-                w: 1,
-                d: 0,
-                h: 3,
-                m: 4,
-                s: 4
-            }
-
+            timeLeft: {}
         }
     }
 
@@ -96,7 +88,7 @@ class Timer extends React.Component {
     }
 
     render() {
-        const timeLeft = this.getTimeLeftObject()
+        const { timeLeft } = this.state
         return (
             <ul className="timer">
                 {Object.keys(timeLeft)
