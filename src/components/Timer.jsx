@@ -47,10 +47,10 @@ class Timer extends React.Component {
     }
 
     /**
-     *
-     * @param {number} diff
-     * @param {array} unitKeys
-     * @param {{milliseconds: number, name: string}} biggerUnit
+     * Returns a map of how many years, weeks, days, hours, minutes and seconds are left.
+     * @param {number} diff - No. of milliseconds
+     * @param {Array} unitKeys - Array of unit keys (y, w, d, h, m, s). Correspond with a timeUnits map.
+     * @returns {Object} Map of y, w, d, h, m, s with their respective value
      */
     calcTimeLeft = (diff, unitKeys) => {
         if (unitKeys.length === 0) {
@@ -83,10 +83,8 @@ class Timer extends React.Component {
 
     getTimeLeftObject = () => {
         const now = Date.now(),
-            diff = this.props.timestamp - now,
-            timeleft = this.calcTimeLeft(diff, Object.keys(this.timeUnits))
-        console.log(timeleft)
-        return timeleft
+            diff = this.props.timestamp - now
+        return this.calcTimeLeft(diff, Object.keys(this.timeUnits))
     }
 
     updateTimer = () => {
