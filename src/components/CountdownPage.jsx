@@ -3,11 +3,13 @@ import Timer from './Timer'
 
 class CountdownPage extends React.Component {
     render() {
+        const title = "Arjo flies to Amsterdam",
+            date = new Date(1484787600000)
         return(
             <div className="countdown-page">
                 <div className="countdown-wrapper">
-                    <Timer/>
-                    <p className="countdown-description">till the end of the World! on Thursday, November 20th 2017</p>
+                    <Timer timestamp={date.valueOf()} />
+                    <p className="countdown-description">till {title} on {date.toLocaleDateString()} at {date.toLocaleTimeString()}</p>
                 </div>
             </div>
         )
