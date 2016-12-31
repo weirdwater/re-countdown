@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import CountdownPage from './CountdownPage'
 
 class App extends Component {
   render() {
     return (
       <main>
-        <CountdownPage/>
+        <h1>Hi, welcome!</h1>
       </main>
     );
   }
